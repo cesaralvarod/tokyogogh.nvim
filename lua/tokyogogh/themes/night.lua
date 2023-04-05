@@ -1,6 +1,7 @@
 local utils = require("tokyogogh.utils")
 
 local M = {
+	name = "night",
 	none = "NONE",
 
 	-- Backgrounds and foregrounds

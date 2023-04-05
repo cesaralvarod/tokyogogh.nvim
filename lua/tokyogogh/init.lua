@@ -1,4 +1,5 @@
 local config = require("tokyogogh.config")
+local groups = require("tokyogogh.groups")
 
 local M = {}
 
@@ -25,6 +26,8 @@ local default_config = {
 
 function M._load(theme)
 	config.set_theme(theme)
+
+	groups.load(config.theme)
 end
 
 function M.setup(opts)
@@ -47,12 +50,12 @@ function M.setup(opts)
 		config.set_terminal_colors()
 	end
 
-	config.set_theme(config.options.style)
-
 	vim.o.background = "dark"
 	vim.g.colors_name = "tokyogogh"
 
-	config.load_groups()
+	config.set_theme(config.options.style)
+
+	groups.load(config.theme)
 end
 
 return M

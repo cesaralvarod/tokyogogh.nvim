@@ -1,22 +1,24 @@
-local utils = require("tokyogogh.utils")
-local colors = require("tokyogogh.colors")
+local storm = require("tokyogogh.themes.storm")
+local night = require("tokyogogh.themes.night")
 
 local M = {}
+
+M.theme = {}
 
 M.options = {}
 
 function M.set_theme(name)
 	if name == "storm" then
-		require("tokyogogh.colors").theme = colors.storm
+		M.theme = storm
 	elseif name == "night" then
-		require("tokyogogh.colors").theme = colors.night
+		M.theme = night
 	else
-		require("tokyogogh.colors").theme = colors.storm
+		M.theme = storm
 	end
 end
 
 function M.set_terminal_colors()
-	local theme = require("tokyogogh.colors").theme
+	local theme = require("tokyogogh.config").theme
 
 	vim.g.terminal_color_0 = theme.black
 	vim.g.terminal_color_8 = theme.black
@@ -41,12 +43,6 @@ function M.set_terminal_colors()
 
 	vim.g.terminal_color_7 = theme.white
 	vim.g.terminal_color_15 = theme.white
-end
-
-M.load_groups = function()
-	local groups = require("tokyogogh.groups")
-
-	utils.highlight(groups)
 end
 
 return M

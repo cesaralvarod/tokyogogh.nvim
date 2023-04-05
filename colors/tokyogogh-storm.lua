@@ -1,1 +1,1 @@
-require("tokyogogh").setup({ style = "storm" })
+require("tokyogogh")._load("storm")

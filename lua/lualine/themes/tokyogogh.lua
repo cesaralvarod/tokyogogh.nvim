@@ -1,4 +1,4 @@
-local colors = require("tokyogogh.colors").theme
+local colors = require("tokyogogh.config").theme
 local config = require("tokyogogh.config").options
 
 local tokyogogh = {}
