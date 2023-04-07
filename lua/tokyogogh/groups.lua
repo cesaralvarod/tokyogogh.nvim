@@ -212,6 +212,7 @@ function M.load(theme)
 		["@string.regex"] = { link = "String" },
 		["@string.escape"] = { fg = theme.cyan },
 		["@constructor"] = { fg = theme.magenta },
+		["@constructor.tsx"] = { fg = theme.yellow },
 		["@constructor.lua"] = { fg = theme.rainbowc1 }, -- {} brackets
 		["@constructor.php"] = { fg = theme.cyan },
 		["@constructor.python"] = { fg = theme.cyan },
