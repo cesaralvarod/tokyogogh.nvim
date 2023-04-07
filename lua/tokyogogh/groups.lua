@@ -196,6 +196,7 @@ function M.load(theme)
 		["@type.sql"] = { fg = theme.blue },
 		["@type.builtin"] = { fg = theme.magenta },
 		["@type.builtin.tsx"] = { fg = theme.yellow },
+		["@type.builtin.typescript"] = { fg = theme.yellow },
 		["@type.qualifier"] = { fg = theme.magenta },
 		["@type.qualifier.php"] = { fg = theme.magenta },
 		["@punctuation"] = { fg = theme.white },
