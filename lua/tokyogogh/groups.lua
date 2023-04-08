@@ -177,7 +177,6 @@ function M.load(theme)
 		-- Tressitter
 
 		["@operator"] = { fg = theme.cyan },
-		["@operator.tsx"] = { fg = theme.magenta },
 		["@operator.cpp"] = { fg = theme.magenta },
 		["@operator.c"] = { fg = theme.magenta },
 		["@operator.lua"] = { fg = theme.white },
@@ -189,7 +188,6 @@ function M.load(theme)
 		["@comment.documentation.lua"] = { fg = theme.comment },
 		["@comment.documentation.go"] = { fg = theme.comment },
 		["@type"] = { fg = theme.yellow },
-		["@type.tsx"] = { fg = theme.red },
 		["@type.css"] = { fg = theme.red },
 		["@type.scss"] = { fg = theme.red },
 		["@type.go"] = { fg = theme.white },
@@ -213,6 +211,8 @@ function M.load(theme)
 		["@string.escape"] = { fg = theme.cyan },
 		["@constructor"] = { fg = theme.magenta },
 		["@constructor.tsx"] = { fg = theme.yellow },
+		["@constructor.typescript"] = { fg = theme.yellow },
+		["@constructor.javascript"] = { fg = theme.yellow },
 		["@constructor.lua"] = { fg = theme.rainbowc1 }, -- {} brackets
 		["@constructor.php"] = { fg = theme.cyan },
 		["@constructor.python"] = { fg = theme.cyan },
@@ -279,6 +279,7 @@ function M.load(theme)
 		-- ["@text.danger"] = {},
 
 		["@conceal"] = { fg = theme.magenta },
+		["@conceal.json"] = { fg = theme.none },
 		["@text.diff.add"] = { link = "DiffAdd" },
 		["@text.diff.delete"] = { link = "DiffDelete" },
 		["@namespace"] = { fg = theme.yellow },
