@@ -181,15 +181,12 @@ You are more than welcome to submit PR for a feature you would like to see or bu
 - [tokyonight.nvim](https://github.com/folke/tokyonight.nvim)
 - [tokyodark.nvim](https://github.com/tiagovla/tokyodark.nvim)
 - [tokyo-night for VSCode](https://marketplace.visualstudio.com/items?itemName=Avetis.tokyo-night)
-<<<<<<< HEAD
 - [Gogh](https://gogh-co.github.io/Gogh)
+- [Gogh](https://gogh-co.github.io/Gogh/)
 
 ## Contributing
 
 You are more than welcome to submit PR for a feature you would like to see or bug fixes.
-=======
-- [Gogh](https://gogh-co.github.io/Gogh/)
->>>>>>> d52901d2b2e8645e3e8a778eaa09b26e35417136
 
 ## License
 
