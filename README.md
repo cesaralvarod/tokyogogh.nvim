@@ -24,6 +24,10 @@ Inspired by the Visual Studio Code theme [Tokyo Dark Theme](https://marketplace.
 - Cyan: "#7dcfff"
 - White: "#d4daf2"
 
+## Neovim v0.9.0
+
+Please read [Neovim v0.9.0: Conflict between LSP and Treesitter](https://github.com/cesaralvarod/tokyogogh.nvim/discussions/2)
+
 ## Themes
 
 ### Tokyo Gogh Storm
@@ -168,16 +172,24 @@ You can find code samples in different programming languages for you to try the 
 
 Extra color configs for **Kitty** and **Alacritty** can be found in [extras](./extras). To use them, refer to their respective documentation.
 
+## Contributing
+
+You are more than welcome to submit PR for a feature you would like to see or bug fixes.
+
 ## Inspiration
 
 - [tokyonight.nvim](https://github.com/folke/tokyonight.nvim)
 - [tokyodark.nvim](https://github.com/tiagovla/tokyodark.nvim)
 - [tokyo-night for VSCode](https://marketplace.visualstudio.com/items?itemName=Avetis.tokyo-night)
+<<<<<<< HEAD
 - [Gogh](https://gogh-co.github.io/Gogh)
 
 ## Contributing
 
 You are more than welcome to submit PR for a feature you would like to see or bug fixes.
+=======
+- [Gogh](https://gogh-co.github.io/Gogh/)
+>>>>>>> d52901d2b2e8645e3e8a778eaa09b26e35417136
 
 ## License
 
