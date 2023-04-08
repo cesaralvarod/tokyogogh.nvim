@@ -24,6 +24,10 @@ Inspired by the Visual Studio Code theme [Tokyo Dark Theme](https://marketplace.
 - Cyan: "#7dcfff"
 - White: "#d4daf2"
 
+## Neovim v0.9.0
+
+Please read [Neovim v0.9.0: Conflict between LSP and Treesitter](https://github.com/cesaralvarod/tokyogogh.nvim/discussions/2)
+
 ## Themes
 
 ### Tokyo Gogh Storm
