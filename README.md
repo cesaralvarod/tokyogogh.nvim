@@ -172,6 +172,10 @@ You can find code samples in different programming languages for you to try the 
 
 Extra color configs for **Kitty** and **Alacritty** can be found in [extras](./extras). To use them, refer to their respective documentation.
 
+## Contributing
+
+You are more than welcome to submit PR for a feature you would like to see or bug fixes.
+
 ## Inspiration
 
 - [tokyonight.nvim](https://github.com/folke/tokyonight.nvim)
