@@ -173,7 +173,11 @@ Extra color configs for **Kitty** and **Alacritty** can be found in [extras](./e
 - [tokyonight.nvim](https://github.com/folke/tokyonight.nvim)
 - [tokyodark.nvim](https://github.com/tiagovla/tokyodark.nvim)
 - [tokyo-night for VSCode](https://marketplace.visualstudio.com/items?itemName=Avetis.tokyo-night)
-- [Gogh](https://gogh-co.github.io/)
+- [Gogh](https://gogh-co.github.io/Gogh)
+
+## Contributing
+
+You are more than welcome to submit PR for a feature you would like to see or bug fixes.
 
 ## License
 

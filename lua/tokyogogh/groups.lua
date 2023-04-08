@@ -76,9 +76,9 @@ function M.load(theme)
 
 		--------------------------------------------------------------------------------------------
 		Comment = { fg = theme.comment, style = options.code_styles.comments }, -- any comment
-		Constant = { fg = theme.orange }, -- any constant (preferred group)
-		String = { fg = theme.green }, -- a string constant: "this is a string"
-		Character = { fg = theme.cyan }, -- a character constant: 'c', '\n'
+		Constant = { fg = theme.orange, style = options.code_styles.constants }, -- any constant (preferred group)
+		String = { fg = theme.green, style = options.code_styles.string }, -- a string constant: "this is a string"
+		Character = { fg = theme.cyan, style = options.code_styles.character }, -- a character constant: 'c', '\n'
 		-- Number = {}, -- a number constant: 234, 0xff
 		-- Boolean = {}, -- a boolean constant: TRUE, false
 		-- Float = {}, -- a floating point constant = 2.3e10
@@ -118,34 +118,6 @@ function M.load(theme)
 		-- Ignore = {}, -- left blank, hidden, hl-Ignore (preferred group)
 		Error = { fg = theme.error }, -- any erroneus construct (preferred group)
 		Todo = { fg = theme.bg, bg = theme.yellow }, -- anything that needs extra attention; mostly the keywords TODO, FIXME and XXX (preferred group)
-		--
-		--------------------------------------------------------------------------------------------
-
-		-- qfLineNr = {},
-
-		-- qfFileName = {},
-
-		-- htmlH1 = { bold = true },
-		-- htmlH2 = { bold = true },
-
-		-- -- mkdHeading = { },
-		-- -- mkdCode = { },
-		-- mkdCodeDelimiter = {},
-		-- mkdCodeStart = {},
-		-- mkdCodeEnd = {},
-		-- mkdLink = {},
-
-		-- markdownHeadingDelimiter = {},
-		-- markdownCode = {},
-		-- markdownCodeBlock = {},
-		-- markdownH1 = {},
-		-- markdownH2 = {},
-		-- markdownLinkText = {},
-
-		-- ["helpCommand"] = {},
-
-		-- debugPC = {}, -- used for highlighting the current line in terminal-debug
-		-- debugBreakpoint = {}, -- used for breakpoint colors in terminal-debug
 
 		--------------------------------------------------------------------------------------------
 
@@ -182,11 +154,11 @@ function M.load(theme)
 		["@operator.lua"] = { fg = theme.white },
 		["@number"] = { fg = theme.orange },
 		["@number.dockerfile"] = { fg = theme.red },
-		["@comment"] = { fg = theme.comment },
-		["@comment.documentation"] = { fg = theme.green },
-		["@comment.documentation.javascript"] = { fg = theme.comment },
-		["@comment.documentation.lua"] = { fg = theme.comment },
-		["@comment.documentation.go"] = { fg = theme.comment },
+		["@comment"] = { fg = theme.comment, style = options.code_styles.comments },
+		["@comment.documentation"] = { fg = theme.green, style = options.code_styles.comments },
+		["@comment.documentation.javascript"] = { fg = theme.comment, style = options.code_styles.comments },
+		["@comment.documentation.lua"] = { fg = theme.comment, style = options.code_styles.comments },
+		["@comment.documentation.go"] = { fg = theme.comment, style = options.code_styles.comments },
 		["@type"] = { fg = theme.yellow },
 		["@type.css"] = { fg = theme.red },
 		["@type.scss"] = { fg = theme.red },
@@ -252,6 +224,7 @@ function M.load(theme)
 		["@property.css"] = { fg = theme.blue },
 		["@property.scss"] = { fg = theme.blue },
 		["@variable"] = { fg = theme.red },
+		["@variable.astro"] = { fg = theme.magenta },
 		["@variable.cpp"] = { fg = theme.white },
 		["@variable.c"] = { fg = theme.white },
 		["@variable.python"] = { fg = theme.white },
@@ -260,11 +233,12 @@ function M.load(theme)
 		["@constant"] = { fg = theme.yellow },
 		["@constant.bash"] = { fg = theme.red },
 		["@constant.lua"] = { fg = theme.red },
-		["@constant.html"] = { fg = theme.blue },
+		["@constant.html"] = { fg = theme.red },
 		["@constant.gitignore"] = { fg = theme.white },
 		["@constant.builtin"] = { fg = theme.orange },
 		["@character"] = { fg = theme.green },
-		["@identifier.tsx"] = { fg = theme.red },
+		["@identifier"] = { fg = theme.red },
+		["@identifier.astro"] = { fg = theme.magenta },
 		["@text.title.markdown"] = { fg = theme.red, bold = true },
 		["@text.strong"] = { fg = theme.orange, bold = true },
 		["@text.emphasis"] = { fg = theme.magenta, italic = true },
@@ -277,7 +251,6 @@ function M.load(theme)
 		-- ["@text.todo.checked"] = {},
 		-- ["@text.warning"] = {},
 		-- ["@text.danger"] = {},
-
 		["@conceal"] = { fg = theme.magenta },
 		["@conceal.json"] = { fg = theme.none },
 		["@text.diff.add"] = { link = "DiffAdd" },
@@ -286,14 +259,17 @@ function M.load(theme)
 		["@namespace.cpp"] = { fg = theme.cyan },
 		["@preproc"] = { fg = theme.cyan },
 		["@preproc.bash"] = { fg = theme.comment },
+
+		--LSP highlight
+
 		["@lsp.type.comment"] = { link = "@comment" },
 		["@lsp.type.enum"] = { link = "@type" },
-		["@lsp.type.interface"] = { link = "Identifier" },
+		["@lsp.type.interface"] = { link = "@type" },
 		["@lsp.type.keyword"] = { link = "@keyword" },
 		["@lsp.type.namespace"] = { link = "@namespace" },
 		["@lsp.type.parameter"] = { link = "@parameter" },
 		["@lsp.type.property"] = { link = "@property" },
-		["@lsp.type.variable"] = { link = "@variables" }, -- use treesitter styles for regular variables
+		["@lsp.type.variable"] = { link = "@variable" },
 		["@lsp.typemod.method.defaultLibrary"] = { link = "@function.builtin" },
 		["@lsp.typemod.function.defaultLibrary"] = { link = "@function.builtin" },
 		["@lsp.typemod.operator.injected"] = { link = "@operator" },
@@ -301,6 +277,15 @@ function M.load(theme)
 		["@lsp.typemod.variable.defaultLibrary"] = { link = "@variable.builtin" },
 		["@lsp.typemod.variable.injected"] = { link = "@variable" },
 		-- ["@lsp.typemod.variable.globalScope"] (global variables)
+
+		-- More highlight (Neovim 0.9)
+
+		["htmlTag"] = { fg = theme.white },
+		["htmlEndTag"] = { fg = theme.white },
+		["htmlTagN"] = { fg = theme.red },
+		["htmlTagName"] = { fg = theme.red },
+		["htmlArg"] = { fg = theme.blue },
+		["htmlSpecialTagName"] = { fg = theme.red },
 
 		-- ts-rainbow
 		rainbowcol1 = { fg = theme.rainbowc1 },

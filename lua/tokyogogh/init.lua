@@ -10,6 +10,9 @@ local default_config = {
 	-- Change code styles
 	code_styles = {
 		strings = { italic = false, bold = false },
+		constants = { italic = false, bold = false },
+		string = { italic = false, bold = false },
+		character = { italic = false, bold = false },
 		comments = { italic = true, bold = false },
 		functions = { italic = false, bold = false },
 		variables = { italic = false, bold = false },
@@ -25,14 +28,19 @@ local default_config = {
 }
 
 function M._load(theme)
+	local local_options = {
+		style = theme,
+	}
+
 	config.set_theme(theme)
+	config.options = vim.tbl_deep_extend("force", {}, default_config, local_options or {})
 
 	groups.load(config.theme)
 end
 
 function M.setup(opts)
-	if vim.version().minor < 8 then
-		vim.notify("tokyogogh: you must use neovim 0.8 or higher")
+	if vim.version().minor < 7 then
+		vim.notify("tokyogogh: you must use neovim 0.7 or higher")
 	end
 
 	config.options = vim.tbl_deep_extend("force", {}, default_config, opts or {})

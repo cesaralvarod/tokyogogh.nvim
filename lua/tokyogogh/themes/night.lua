@@ -26,6 +26,7 @@ local M = {
 
 	bg_statusline = "#1d1b26",
 	fg_statusline = "#ffffff",
+	bg_inactive_statusline = "#1d1f2d",
 
 	bg_breadcrumb = "#1d1b26",
 	fg_breadcrumb = "#c0caf5",

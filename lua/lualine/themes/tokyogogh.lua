@@ -35,9 +35,9 @@ tokyogogh.terminal = {
 }
 
 tokyogogh.inactive = {
-	a = { bg = colors.bg_statusline, fg = colors.orange },
-	b = { bg = colors.bg_statusline, fg = colors.black, gui = "bold" },
-	c = { bg = colors.bg_statusline, fg = colors.black },
+	a = { bg = colors.bg_inactive_statusline, fg = colors.orange },
+	b = { bg = colors.bg_inactive_statusline, fg = colors.white, gui = "bold" },
+	c = { bg = colors.bg_inactive_statusline, fg = colors.white },
 }
 
 if config.lualine_bold then
