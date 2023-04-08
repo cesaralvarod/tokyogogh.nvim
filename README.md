@@ -13,21 +13,52 @@ Inspired by the Visual Studio Code theme [Tokyo Dark Theme](https://marketplace.
 - Vim terminal colors
 - Italic support
 
+### Palette
+
+- Black: "#414868"
+- Red: "#e87088"
+- Green: "#9ece6a"
+- Yellow: "#dec76e"
+- Blue: "#7aa2f7"
+- Magenta: "#bb9af7"
+- Cyan: "#7dcfff"
+- White: "#d4daf2"
+
 ## Themes
 
 ### Tokyo Gogh Storm
 
 ![Tokyo Gogh Storm Screenshot](./docs/images/storm.png)
 
+#### Color palette
+
+- Background: "#24283b"
+- Foreground: "#c0caf5"
+- Selection background: "#3b4261"
+- Selection foreground: "#0c0e15"
+- Cursor: "#c0caf5"
+- Cursor text color: "#24283b"
+
 ### Tokyo Gogh Night
 
 ![Tokyo Gogh Night Screenshot](./docs/images/night.png)
+
+#### Color palette
+
+- Background: "#1d1b26"
+- Foreground: "#c0caf5"
+- Selection background: "#3b4261"
+- Selection foreground: "#0c0e15"
+- Cursor: "#c0caf5"
+- Cursor text color: "#24283b"
 
 ## Requirements
 
 - Neovim >= 0.8
 
 ## Installation
+
+Set terminal color
 
 Install the theme with yout preferred package manager:
 
@@ -77,7 +108,6 @@ vim.cmd([[colorscheme tokyogogh]])
 require('tokyogogh').setup {
   style = 'storm', -- storm | night
   term_colors = true,
-
 	-- Change code styles
 	code_styles = {
 		strings = { italic = false, bold = false },
@@ -85,12 +115,10 @@ require('tokyogogh').setup {
 		functions = { italic = false, bold = false },
 		variables = { italic = false, bold = false },
 	},
-
 	diagnostics = {
 		undercurl = true, -- use undercurl instead of underline
 		background = true,
 	},
-
   -- Customization
   colors = {},
   highlight = {},
@@ -100,6 +128,10 @@ require('tokyogogh').setup {
 ## Customization
 
 Soon
+
+## Examples
+
+You can find code samples in different programming languages for you to try the code highlighted by tokyogogh in [docs/highlight-examples](./docs/highlight-examples)
 
 ## Plugins Supported
 
@@ -129,8 +161,12 @@ Soon
   <!-- - [Mini](https://github.com/echasnovski/mini.nvim) -->
 - [Navic](https://github.com/SmiteshP/nvim-navic)
   <!-- - [Barbecue](https://github.com/utilyre/barbecue.nvim) -->
-- [Notify](https://github.com/rcarriga/nvim-notify)
+- [Notify](https://github.com/rcarrina/nvim-notify)
   <!-- - [Neotest](https://github.com/nvim-neotest/neotest) -->
+
+## Extras
+
+Extra color configs for **Kitty** and **Alacritty** can be found in [extras](./extras). To use them, refer to their respective documentation.
 
 ## Inspiration
 
