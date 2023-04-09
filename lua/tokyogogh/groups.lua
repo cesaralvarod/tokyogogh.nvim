@@ -8,7 +8,7 @@ function M.load(theme)
 	local groups = {
 		Foo = { bg = theme.magenta, fg = theme.magenta },
 		ColorColumn = { bg = theme.black }, -- used for the colums set with 'colorcolumn'
-		Conceal = { fg = theme.black }, -- placeholder characters substituited for concealed text (see 'conceallevel')
+		Conceal = { fg = theme.magenta }, -- placeholder characters substituited for concealed text (see 'conceallevel')
 		CurSearch = { link = "IncSearch" }, -- used for highlighting a search pattern under the cursor (see 'hlsearch')
 		Cursor = { fg = theme.fg_highlight, bg = theme.bg_highlight }, -- character under the cursor
 		lCursor = { fg = theme.fg_highlight, bg = theme.bg_highlight }, -- character under the cursor when language-mapping is used (see 'guicursor')
@@ -75,49 +75,49 @@ function M.load(theme)
 		-- WinBarNC = {}, -- window bar of not-current window
 
 		--------------------------------------------------------------------------------------------
-		Comment = { fg = theme.comment, style = options.code_styles.comments }, -- any comment
-		Constant = { fg = theme.orange, style = options.code_styles.constants }, -- any constant (preferred group)
+		Comment = { fg = theme.comment, style = options.code_styles.comment }, -- any comment
+		Constant = { fg = theme.orange, style = options.code_styles.constant }, -- any constant (preferred group)
 		String = { fg = theme.green, style = options.code_styles.string }, -- a string constant: "this is a string"
 		Character = { fg = theme.cyan, style = options.code_styles.character }, -- a character constant: 'c', '\n'
-		-- Number = {}, -- a number constant: 234, 0xff
-		-- Boolean = {}, -- a boolean constant: TRUE, false
-		-- Float = {}, -- a floating point constant = 2.3e10
+		Number = { link = "Constant", style = options.code_styles.number }, -- a number constant: 234, 0xff
+		Boolean = { link = "Constant", style = options.code_styles.boolean }, -- a boolean constant: TRUE, false
+		Float = { link = "Constant", style = options.code_styles.floar }, -- a floating point constant = 2.3e10
 
-		Identifier = { fg = theme.red }, -- any variable name (preferred group)
-		Function = { fg = theme.blue }, -- function name (also: methods for classes)
-		Statement = { fg = theme.magenta }, -- any statement(preferred group)
-		Conditional = { fg = theme.magenta }, -- if, then, else, endif, switch, etc.
-		Repeat = { fg = theme.magenta }, -- for, do, while, etc.
-		-- Label = {}, -- case, default, etc.
-		Operator = { fg = theme.white }, -- "sizeof", "+", "*", etc.
-		Keyword = { fg = theme.magenta }, -- any other keyword
-		-- Exception = {}, -- try, catch, throw
+		Identifier = { fg = theme.red, style = options.code_styles.identifier }, -- any variable name (preferred group)
+		Function = { fg = theme.blue, style = options.code_styles.functions }, -- function name (also: methods for classes)
+		Statement = { fg = theme.magenta, style = options.code_styles.statement }, -- any statement(preferred group)
+		Conditional = { fg = theme.magenta, style = options.code_styles.conditional }, -- if, then, else, endif, switch, etc.
+		Repeat = { fg = theme.magenta, style = options.code_styles.repeats }, -- for, do, while, etc.
+		Label = { link = "Identifier", style = options.code_styles.label }, -- case, default, etc.
+		Operator = { fg = theme.cyan, style = options.code_styles.operator }, -- "sizeof", "+", "*", etc.
+		Keyword = { fg = theme.magenta, style = options.code_styles.keyword }, -- any other keyword
+		Exception = { fg = theme.magenta, style = options.code_styles.exception }, -- try, catch, throw
 
-		PreProc = { fg = theme.cyan }, -- generic Preprocessor (preferred group)
-		-- Include = {}, -- preprocessor #include
-		-- Define = {}, -- preprocessor #define
-		-- Macro = {}, -- same as Define
-		-- PreCondit = {}, -- preprocessor #if, #else, #endif, etc.
+		PreProc = { fg = theme.cyan, style = options.code_styles.preproc }, -- generic Preprocessor (preferred group)
+		Include = { fg = theme.magenta, style = options.code_styles.include }, -- preprocessor #include
+		Define = { link = "PreProc", style = options.code_styles.define }, -- preprocessor #define
+		Macro = { link = "PreProc", style = options.code_styles.macro }, -- same as Define
+		PreCondit = { link = "PreProc", style = options.code_styles.precondit }, -- preprocessor #if, #else, #endif, etc.
 
-		Type = { fg = theme.yellow }, -- int, long, char, etc. (preferred group)
-		StorageClass = { fg = theme.magenta }, -- static, register, volatile, etc.
-		-- -- Structure = {}, -- struct, union, enum, etc.
-		-- -- Typedef = {}, -- A typedef
+		Type = { fg = theme.yellow, style = options.code_styles.type }, -- int, long, char, etc. (preferred group)
+		StorageClass = { fg = theme.magenta, style = options.code_styles.storageclass }, -- static, register, volatile, etc.
+		Structure = { link = "Type", style = options.code_styles.structure }, -- struct, union, enum, etc.
+		Typedef = { link = "Type", style = options.code_styles.typedef }, -- A typedef
 
-		-- Special = {}, -- any special symbol (preffered group)
-		-- -- SpecialChar = {}, -- special character in a constant
-		Tag = { fg = theme.red }, -- you can user CTRL-] on this
-		-- Delimitier = {}, -- character that needs attention
-		-- SpecialComment = {}, -- sepecial things inside a comment
-		-- Debug = {}, -- debugging statements
+		Special = { fg = theme.cyan, style = options.code_styles.special }, -- any special symbol (preffered group)
+		SpecialChar = { fg = theme.cyan, style = options.code_styles.typedef }, -- special character in a constant
+		Tag = { fg = theme.red, style = options.code_styles.tag }, -- you can user CTRL-] on this
+		Delimiter = { fg = theme.white, style = options.code_styles.delimiter }, -- character that needs attention
+		SpecialComment = { link = "Special", style = options.code_styles.specialcomment }, -- sepecial things inside a comment
+		Debug = { link = "Special", style = options.code_styles.debugs }, -- debugging statements
 
-		Underlined = { fg = theme.magenta, underline = true }, -- text that standa out, HTML links (preferred group)
-		Bold = { bold = true },
-		Italic = { italic = true },
-		--
-		-- Ignore = {}, -- left blank, hidden, hl-Ignore (preferred group)
-		Error = { fg = theme.error }, -- any erroneus construct (preferred group)
-		Todo = { fg = theme.bg, bg = theme.yellow }, -- anything that needs extra attention; mostly the keywords TODO, FIXME and XXX (preferred group)
+		Underlined = { fg = theme.magenta, style = options.code_styles.underlined }, -- text that standa out, HTML links (preferred group)
+		Bold = { style = options.code_styles.bold },
+		Italic = { style = options.code_styles.italic },
+
+		Ignore = { fg = theme.none, style = options.code_styles.ignore }, -- left blank, hidden, hl-Ignore (preferred group)
+		Error = { fg = theme.error, style = options.code_styles.error }, -- any erroneus construct (preferred group)
+		Todo = { fg = theme.bg, bg = theme.yellow, style = options.code_styles.todo }, -- anything that needs extra attention; mostly the keywords TODO, FIXME and XXX (preferred group)
 
 		--------------------------------------------------------------------------------------------
 
@@ -148,127 +148,227 @@ function M.load(theme)
 
 		-- Tressitter
 
-		["@operator"] = { fg = theme.cyan },
-		["@operator.cpp"] = { fg = theme.magenta },
-		["@operator.c"] = { fg = theme.magenta },
-		["@operator.lua"] = { fg = theme.white },
-		["@number"] = { fg = theme.orange },
-		["@number.dockerfile"] = { fg = theme.red },
-		["@comment"] = { fg = theme.comment, style = options.code_styles.comments },
-		["@comment.documentation"] = { fg = theme.green, style = options.code_styles.comments },
-		["@comment.documentation.javascript"] = { fg = theme.comment, style = options.code_styles.comments },
-		["@comment.documentation.lua"] = { fg = theme.comment, style = options.code_styles.comments },
-		["@comment.documentation.go"] = { fg = theme.comment, style = options.code_styles.comments },
-		["@type"] = { fg = theme.yellow },
-		["@type.css"] = { fg = theme.red },
-		["@type.scss"] = { fg = theme.red },
-		["@type.go"] = { fg = theme.white },
-		["@type.sql"] = { fg = theme.blue },
-		["@type.builtin"] = { fg = theme.magenta },
-		["@type.builtin.tsx"] = { fg = theme.yellow },
-		["@type.builtin.typescript"] = { fg = theme.yellow },
-		["@type.qualifier"] = { fg = theme.magenta },
-		["@type.qualifier.php"] = { fg = theme.magenta },
-		["@punctuation"] = { fg = theme.white },
-		["@punctuation.dockerfile"] = { fg = theme.red },
-		["@punctuation.delimiter"] = { fg = theme.white },
-		["@punctuation.delimiter.markdown"] = { fg = theme.orange, bold = true },
-		["@punctuation.bracket"] = { fg = theme.rainbowc1 },
-		["@punctuation.bracket.lua"] = { fg = theme.white },
-		["@punctuation.special"] = { fg = theme.cyan },
-		["@punctuation.special.bash"] = { fg = theme.red },
-		["@punctuation.special.markdown"] = { fg = theme.red },
-		["@string"] = { link = "String", fg = theme.green },
-		["@string.regex"] = { link = "String" },
-		["@string.escape"] = { fg = theme.cyan },
-		["@constructor"] = { fg = theme.magenta },
-		["@constructor.tsx"] = { fg = theme.yellow },
-		["@constructor.typescript"] = { fg = theme.yellow },
-		["@constructor.javascript"] = { fg = theme.yellow },
-		["@constructor.lua"] = { fg = theme.rainbowc1 }, -- {} brackets
-		["@constructor.php"] = { fg = theme.cyan },
-		["@constructor.python"] = { fg = theme.cyan },
-		["@parameter"] = { fg = theme.red, italic = true },
-		["@parameter.lua"] = { fg = theme.white, italic = true },
-		["@parameter.python"] = { fg = theme.orange, italic = true },
-		["@parameter.builtin"] = { fg = theme.white },
-		["@keyword"] = { fg = theme.magenta },
-		["@keyword.sql"] = { fg = theme.magenta },
-		["@keyword.dockerfile"] = { fg = theme.blue },
-		-- ["@keyword.coroutine"] = { }, -- For keywords related to coroutines.
-		["@keyword.function"] = { fg = theme.magenta, italic = true },
-		["@function.css"] = { fg = theme.cyan },
-		["@function.builtin"] = { fg = theme.cyan },
-		["@function.call"] = { fg = theme.blue },
-		["@function.call.dockerfile"] = { fg = theme.red },
-		["@function.call.go"] = { fg = theme.cyan },
-		["@function.call.bash"] = { fg = theme.white },
-		["@method.call.go"] = { fg = theme.cyan },
-		["@label"] = { fg = theme.red },
-		["@label.lua"] = { fg = theme.white },
-		["@include"] = { fg = theme.magenta },
-		["@include.python"] = { fg = theme.magenta, italic = true },
-		["@tag"] = { fg = theme.red },
-		["@tag.tsx"] = { fg = theme.red },
-		["@tag.html"] = { fg = theme.red },
-		["@tag.builtin.tsx"] = { fg = theme.yellow },
-		["@tag.attribute"] = { fg = theme.blue, italic = true },
-		["@tag.attribute.html"] = { fg = theme.blue, italic = false },
-		["@tag.delimiter"] = { fg = theme.white },
-		["@field"] = { fg = theme.red },
-		["@field.lua"] = { fg = theme.white },
-		["@field.go"] = { fg = theme.white },
-		["@property.bultin.css"] = { fg = theme.cyan },
-		["@property"] = { fg = theme.cyan },
-		["@property.lua"] = { fg = theme.white },
-		["@property.css"] = { fg = theme.blue },
-		["@property.scss"] = { fg = theme.blue },
-		["@variable"] = { fg = theme.red },
-		["@variable.astro"] = { fg = theme.magenta },
-		["@variable.cpp"] = { fg = theme.white },
-		["@variable.c"] = { fg = theme.white },
-		["@variable.python"] = { fg = theme.white },
-		["@variable.builtin"] = { fg = theme.yellow },
-		["@variable.builtin.tsx"] = { fg = theme.red },
-		["@constant"] = { fg = theme.yellow },
-		["@constant.bash"] = { fg = theme.red },
-		["@constant.lua"] = { fg = theme.red },
-		["@constant.html"] = { fg = theme.red },
-		["@constant.gitignore"] = { fg = theme.white },
-		["@constant.builtin"] = { fg = theme.orange },
-		["@character"] = { fg = theme.green },
-		["@identifier"] = { fg = theme.red },
-		["@identifier.astro"] = { fg = theme.magenta },
-		["@text.title.markdown"] = { fg = theme.red, bold = true },
+		-- text
+		["@text.literal"] = { fg = theme.green },
+		["@text.reference"] = { fg = theme.blue },
+		["@text.title"] = { fg = theme.red, bold = true },
+		["@text.uri"] = { fg = theme.green, underline = true },
+		["@text.underline"] = { fg = theme.green, underline = true },
+		["@text.todo"] = { link = "Todo" },
 		["@text.strong"] = { fg = theme.orange, bold = true },
 		["@text.emphasis"] = { fg = theme.magenta, italic = true },
 		["@text.strike"] = { strikethrough = true },
-		["@text.literal"] = { fg = theme.green },
-		["@text.uri"] = { fg = theme.green, underline = true },
 		["@text.quote"] = { fg = theme.comment },
-		["@text.reference"] = { fg = theme.blue },
-		-- ["@text.todo.unchecked"] = {},
-		-- ["@text.todo.checked"] = {},
-		-- ["@text.warning"] = {},
-		-- ["@text.danger"] = {},
-		["@conceal"] = { fg = theme.magenta },
-		["@conceal.json"] = { fg = theme.none },
+		["@text.todo.unchecked"] = {},
+		["@text.todo.checked"] = {},
+		["@text.warning"] = {},
+		["@text.danger"] = {},
 		["@text.diff.add"] = { link = "DiffAdd" },
 		["@text.diff.delete"] = { link = "DiffDelete" },
-		["@namespace"] = { fg = theme.yellow },
-		["@namespace.cpp"] = { fg = theme.cyan },
-		["@preproc"] = { fg = theme.cyan },
-		["@preproc.bash"] = { fg = theme.comment },
+		--
+		["@conceal"] = { link = "Conceal" },
+		["@conceal.json"] = { fg = theme.none },
 
-		--LSP highlight
+		-- miscs
+		["@comment"] = { link = "Comment" },
+		["@comment.documentation"] = { link = "String", style = options.code_styles.comment },
+		["@comment.documentation.javascript"] = { link = "Comment" },
+		["@comment.documentation.lua"] = { link = "Comment" },
+		["@comment.documentation.go"] = { link = "Comment" },
+		--
+		["@punctuation"] = { link = "Delimiter" },
+		-- ["@punctuation.dockerfile"] = { fg = theme.red },
+		["@punctuation.delimiter"] = { link = "@punctuation" },
+		["@punctuation.delimiter.css"] = { fg = theme.cyan, style = options.code_styles.delimiter },
+		-- ["@punctuation.delimiter.markdown"] = { fg = theme.orange, bold = true },
+		["@punctuation.bracket"] = { fg = theme.rainbowc1, style = options.code_styles.delimiter },
+		-- ["@punctuation.bracket.lua"] = { fg = theme.white },
+		["@punctuation.special"] = { fg = theme.cyan, style = options.code_styles.delimiter },
+		["@punctuation.special.vue"] = { fg = theme.rainbowc1, style = options.code_styles.delimiter },
+		["@punctuation.special.bash"] = { fg = theme.red, style = options.code_styles.delimiter },
+		-- [" "#e08f68@punctuation.special.markdown"] = { fg = theme.red },
 
+		-- constants
+		["@constant"] = { fg = theme.yellow, style = options.code_styles.constant },
+		["@constant.bash"] = { fg = theme.red, style = options.code_styles.constant },
+		-- ["@constant.lua"] = { fg = theme.red },
+		-- ["@constant.html"] = { fg = theme.red },
+		-- ["@constant.gitignore"] = { fg = theme.white },
+		--
+		["@constant.builtin"] = { link = "Special" },
+		--
+		["@constant.macro"] = { link = "Define" },
+		--
+		["@define"] = { link = "Define" },
+		--
+		["@macro"] = { link = "Macro" },
+		--
+		["@string"] = { link = "String" },
+		-- ["@string.regex"] = { link = "String" },
+		--
+		["@string.escape"] = { link = "SpecialChar" },
+		--
+		["@string.special"] = { link = "SpecialChar" },
+		--
+		["@character"] = { link = "Character" },
+		["@character.c"] = { fg = theme.green, style = options.code_styles.character },
+		--
+		["@character.special"] = { link = "SpecialChar" },
+		--
+		["@number"] = { link = "Number" },
+		-- ["@number.dockerfile"] = { fg = theme.red },
+		--
+		["@boolean"] = { link = "Boolean" },
+		--
+		["@float"] = { link = "Float" },
+
+		-- functions
+		["@function"] = { link = "Function" },
+		["@function.css"] = { fg = theme.cyan, style = options.code_styles.functions },
+		--
+		["@function.builtin"] = { link = "Special" },
+		--
+		["@function.macro"] = { link = "Macro" },
+		--
+		["@function.call"] = { fg = theme.cyan, style = options.code_styles.functions },
+		-- ["@function.call.dockerfile"] = { fg = theme.red },
+		-- ["@function.call.go"] = { fg = theme.cyan },
+		["@function.call.bash"] = { fg = theme.white, style = options.code_styles.functions },
+		["@function.call.python"] = { fg = theme.cyan, italic = false },
+		["@function.call.c"] = { fg = theme.blue, italic = false },
+		["@function.call.cpp"] = { fg = theme.blue, italic = false },
+		--
+		["@parameter"] = { fg = theme.red, italic = true },
+		["@parameter.lua"] = { fg = theme.white, italic = true },
+		["@parameter.python"] = { fg = theme.orange, italic = true },
+		-- ["@parameter.builtin"] = { fg = theme.white },
+		--
+		["@method"] = { link = "Function" },
+		--
+		["@method.call"] = { link = "Function" },
+		-- ["@method.call.go"] = { fg = theme.cyan },
+		--
+		["@field"] = { link = "Identifier" },
+		["@field.lua"] = { fg = theme.white, style = options.code_styles.identifier },
+		["@field.cpp"] = { fg = theme.white, style = options.code_styles.identifier },
+		["@field.python"] = { fg = theme.white, style = options.code_styles.identifier },
+		["@field.go"] = { fg = theme.white, style = options.code_styles.identifier },
+		--
+		["@property"] = { link = "Identifier" },
+		-- ["@property.lua"] = { fg = theme.white },
+		["@property.css"] = { fg = theme.white, style = options.code_styles.identifier },
+		["@property.scss"] = { fg = theme.white, style = options.code_styles.identifier },
+		--
+		["@property.bultin"] = { fg = theme.cyan, style = options.code_styles.identifier },
+		--
+		["@constructor"] = { link = "Special" },
+		["@constructor.tsx"] = { fg = theme.yellow, style = options.code_styles.special },
+		["@constructor.typescript"] = { fg = theme.yellow, style = options.code_styles.special },
+		["@constructor.javascript"] = { fg = theme.yellow, style = options.code_styles.special },
+		["@constructor.lua"] = { fg = theme.magenta, style = options.code_styles.special }, -- {} brackets
+
+		-- keywords
+		["@conditional"] = { link = "Conditional" },
+		["@conditional.python"] = { fg = theme.magenta, italic = true },
+		--
+		["@repeat"] = { link = "Repeat" },
+		["@repeat.python"] = { fg = theme.magenta, italic = true },
+		--
+		["@label"] = { link = "Label" },
+		["@label.lua"] = { fg = theme.white, style = options.code_styles.label },
+		--
+		["@operator"] = { link = "Operator" },
+		["@operator.cpp"] = { fg = theme.magenta, style = options.code_styles.operator },
+		["@operator.c"] = { fg = theme.magenta, style = options.code_styles.operator },
+		["@operator.lua"] = { fg = theme.white, style = options.code_styles.operator },
+		["@operator.python"] = { fg = theme.cyan, style = options.code_styles.operator },
+		--
+		["@keyword"] = { link = "Keyword" },
+		["@keyword.dockerfile"] = { fg = theme.blue, style = options.code_styles.keyword },
+		--
+		-- ["@keyword.coroutine"] = { }, -- For keywords related to coroutines.
+		["@keyword.function"] = { link = "Keyword" },
+		["@keyword.operator"] = { fg = theme.magenta, style = options.code_styles.keyword },
+		["@keyword.operator.php"] = { fg = theme.magenta, style = options.code_styles.keyword },
+		--
+		["@exception"] = { link = "Exception" },
+		--
+		["@variable"] = { link = "Identifier" },
+		["@variable.astro"] = { fg = theme.magenta, style = options.code_styles.identifier },
+		["@variable.cpp"] = { fg = theme.white, style = options.code_styles.identifier },
+		["@variable.c"] = { fg = theme.white, style = options.code_styles.identifier },
+		["@variable.python"] = { fg = theme.white, style = options.code_styles.identifier },
+		["@variable.go"] = { fg = theme.white, style = options.code_styles.identifier },
+		--
+		["@variable.builtin"] = { fg = theme.yellow, style = options.code_styles.identifier },
+		-- --
+		["@type"] = { link = "Type" },
+		["@type.python"] = { fg = theme.cyan, style = options.code_styles.type },
+		["@type.css"] = { fg = theme.red, style = options.code_styles.type },
+		["@type.scss"] = { fg = theme.red, style = options.code_styles.type },
+		["@type.sql"] = { fg = theme.blue, style = options.code_styles.type },
+		--
+		["@type.definition"] = { link = "Typedef" },
+		--
+		["@type.builtin"] = { link = "Type" },
+		["@type.builtin.python"] = { fg = theme.cyan, style = options.code_styles.type },
+		["@type.builtin.cpp"] = { fg = theme.magenta, style = options.code_styles.type },
+		["@type.builtin.c"] = { fg = theme.magenta, style = options.code_styles.type },
+		["@type.builtin.go"] = { fg = theme.magenta, style = options.code_styles.type },
+		["@type.builtin.java"] = { fg = theme.magenta, style = options.code_styles.type },
+		--
+		["@type.qualifier"] = { link = "Type" },
+		["@type.qualifier.cpp"] = { fg = theme.magenta, style = options.code_styles.type },
+		["@type.qualifier.c"] = { fg = theme.magenta, style = options.code_styles.type },
+		["@type.qualifier.php"] = { fg = theme.magenta, style = options.code_styles.type },
+		["@type.qualifier.java"] = { fg = theme.magenta, style = options.code_styles.type },
+		--
+		["@storageclass"] = { link = "StorageClass" },
+		--
+		["@namespace"] = { link = "Identifier" }, -- Identifier
+		["@namespace.cpp"] = { fg = theme.yellow, style = options.code_styles.identifier },
+		["@namespace.c"] = { fg = theme.yellow, style = options.code_styles.identifier },
+		["@namespace.php"] = { fg = theme.yellow, style = options.code_styles.identifier },
+		--
+		["@include"] = { link = "Include" },
+		-- ["@include.python"] = { fg = theme.magenta, italic = true },
+		--
+		["@preproc"] = { link = "PreProc" },
+		["@preproc.lua"] = { fg = theme.comment, italic = true },
+		["@preproc.bash"] = { fg = theme.comment, italic = true },
+		--
+		["@debug"] = { link = "Debug" },
+		--
+		["@attribute"] = { fg = theme.magenta, style = options.code_styles.keyword },
+		--
+		["@tag"] = { link = "Tag" },
+		-- ["@tag.tsx"] = { fg = theme.red },
+		-- ["@tag.html"] = { fg = theme.red },
+		-- ["@tag.builtin.tsx"] = { fg = theme.yellow },
+		["@tag.attribute"] = { fg = theme.blue, italic = true },
+		-- ["@tag.attribute.html"] = { fg = theme.blue, italic = false },
+		["@tag.delimiter"] = { fg = theme.white },
+		--
+		["@identifier"] = { link = "Identifier" },
+		-- ["@identifier.astro"] = { fg = theme.magenta },
+
+		--LSP semantic tokens
+
+		["@lsp.type.class"] = { link = "@keyword" },
 		["@lsp.type.comment"] = { link = "@comment" },
-		["@lsp.type.enum"] = { link = "@type" },
-		["@lsp.type.interface"] = { link = "@type" },
-		["@lsp.type.keyword"] = { link = "@keyword" },
+		["@lsp.type.decorator"] = { link = "@keyword" },
+		["@lsp.type.enum"] = { link = "@keyword" },
+		["@lsp.type.enumMember"] = { link = "@variable" },
+		["@lsp.type.function"] = { link = "@keyword" },
+		["@lsp.type.interface"] = { link = "@keyword" },
+		["@lsp.type.macro"] = { link = "@macro" },
+		["@lsp.type.method"] = { link = "@method" },
 		["@lsp.type.namespace"] = { link = "@namespace" },
 		["@lsp.type.parameter"] = { link = "@parameter" },
 		["@lsp.type.property"] = { link = "@property" },
+		["@lsp.type.struct"] = { link = "@property" },
+		["@lsp.type.type"] = { link = "@type" },
+		["@lsp.type.typeParameter"] = { link = "@variable" },
 		["@lsp.type.variable"] = { link = "@variable" },
 		["@lsp.typemod.method.defaultLibrary"] = { link = "@function.builtin" },
 		["@lsp.typemod.function.defaultLibrary"] = { link = "@function.builtin" },
@@ -278,14 +378,14 @@ function M.load(theme)
 		["@lsp.typemod.variable.injected"] = { link = "@variable" },
 		-- ["@lsp.typemod.variable.globalScope"] (global variables)
 
-		-- More highlight (Neovim 0.9)
+		-- More highlight
 
-		["htmlTag"] = { fg = theme.white },
-		["htmlEndTag"] = { fg = theme.white },
-		["htmlTagN"] = { fg = theme.red },
-		["htmlTagName"] = { fg = theme.red },
-		["htmlArg"] = { fg = theme.blue },
-		["htmlSpecialTagName"] = { fg = theme.red },
+		-- ["htmlTag"] = { fg = theme.white },
+		-- ["htmlEndTag"] = { fg = theme.white },
+		-- ["htmlTagN"] = { fg = theme.red },
+		-- ["htmlTagName"] = { fg = theme.red },
+		-- ["htmlArg"] = { fg = theme.blue },
+		-- ["htmlSpecialTagName"] = { fg = theme.red },
 
 		-- ts-rainbow
 		rainbowcol1 = { fg = theme.rainbowc1 },
@@ -295,6 +395,7 @@ function M.load(theme)
 		rainbowcol5 = { fg = theme.rainbowc2 },
 		rainbowcol6 = { fg = theme.rainbowc3 },
 		rainbowcol7 = { fg = theme.rainbowc1 },
+
 		-- ts-rainbow2 (maintained fork)
 		TSRainbowRed = { fg = theme.red },
 		TSRainbowOrange = { fg = theme.orange },
@@ -303,6 +404,7 @@ function M.load(theme)
 		TSRainbowBlue = { fg = theme.blue },
 		TSRainbowViolet = { fg = theme.purple },
 		TSRainbowCyan = { fg = theme.cyan },
+
 		-- diff
 		diffAdded = { fg = theme.git.add },
 		diffRemoved = { fg = theme.git.delete },
@@ -312,13 +414,16 @@ function M.load(theme)
 		diffFile = { fg = theme.blue },
 		diffLine = { fg = theme.comment },
 		diffIndexLine = { fg = theme.magenta },
+
 		-- GitSigns
 		GitSignsAdd = { fg = theme.git.add }, -- diff mode: Added line |diff.txt|
 		GitSignsChange = { fg = theme.git.change }, -- diff mode: Changed line |diff.txt|
 		GitSignsDelete = { fg = theme.git.delete }, -- diff mode: Deleted line |diff.txt|
+
 		-- Telescope
 		TelescopeBorder = { fg = theme.border_highlight },
-		TelescopeNormal = { fg = theme.fg },
+		TelescopeNormal = { fg = theme.fg, bg = theme.bg_popup },
+
 		-- NvimTree
 		NvimTreeNormal = { fg = theme.fg_sidebar, bg = theme.bg_sidebar },
 		NvimTreeWinSeparator = { fg = theme.border_sidebar, bg = theme.bg_sidebar },
@@ -334,30 +439,37 @@ function M.load(theme)
 		NvimTreeSymlink = { fg = theme.blue },
 		NvimTreeFolderIcon = { bg = theme.none, fg = theme.blue },
 		NvimTreeFolderName = { link = "Directory" },
+
 		-- NeoTree
 		NeoTreeNormal = { fg = theme.fg_sidebar, bg = theme.bg_sidebar },
 		NeoTreeNormalNC = { bg = theme.none, fg = theme.blue },
 		NeoTreeDimText = { fg = theme.fg_gutter },
+
 		-- Bufferline
 		BufferlineIndicatorSelected = { fg = theme.orange },
 		BufferlineFill = { bg = theme.bg_tab, fg = theme.bg_tab },
 		BufferlineBufferSelected = { fg = theme.white },
+
 		-- sneak
 		Sneak = { fg = theme.bg_highlight, bg = theme.magenta },
 		SneakScope = { bg = theme.bg_visual },
+
 		-- Hop
 		HopNextKey = { fg = theme.magenta, bold = true },
 		HopNextKey1 = { fg = theme.blue, bold = true },
 		HopNextKey2 = { fg = utils.darken(theme.blue, 0.6) },
 		HopUnmatched = { fg = theme.black },
+
 		-- TS Playground
 		TSNodeKey = { fg = theme.magenta, bold = true },
 		TSNodeUnmatched = { fg = theme.dark },
+
 		-- leap
 		LeapMatch = { bg = theme.magenta, fg = theme.fg, bold = true },
 		LeapLabelPrimary = { fg = theme.magenta, bold = true },
 		LeapLabelSecondary = { fg = theme.green, bold = true },
 		LeapBackdrop = { fg = theme.dark },
+
 		-- lightspeed
 		LightspeedGreyWash = { fg = theme.dark },
 		-- LightspeedCursor = { link = "Cursor" },
@@ -372,6 +484,7 @@ function M.load(theme)
 		-- LightspeedShortcutOverlapped = { link = "LightspeedShortcut" },
 		-- LightspeedUniqueChar = { link = "LightspeedUnlabeledMatch" },
 		LightspeedUnlabeledMatch = { fg = theme.blue, bold = true },
+
 		-- CMP
 		CmpDocumentation = { fg = theme.fg, bg = theme.bg },
 		CmpDocumentationBorder = { fg = theme.border_highlight, bg = theme.bg_popup },

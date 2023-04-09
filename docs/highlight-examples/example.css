@@ -61,6 +61,7 @@ input[type='password'] {
   padding: 0.5em;
   border-radius: 3px;
   font-size: 1em;
+  background: rgba(123, 123, 123);
 }
 
 .container {

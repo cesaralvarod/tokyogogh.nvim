@@ -10,6 +10,7 @@ import axios from "axios";
 var a = 5;
 let b = "hello";
 const c = true;
+const NAME_OF_PERSON = "Cesar";
 
 // Arrays
 const arr = [1, 2, 3];
