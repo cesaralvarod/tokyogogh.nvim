@@ -170,6 +170,7 @@ function M.load(theme)
 		--
 		["@conceal"] = { link = "Conceal" },
 		["@conceal.json"] = { fg = theme.none },
+		["@conceal.jsonc"] = { fg = theme.none },
 
 		-- miscs
 		["@comment"] = { link = "Comment" },
@@ -405,6 +406,7 @@ function M.load(theme)
 		["htmlTagName"] = { fg = theme.red },
 		["htmlArg"] = { fg = theme.blue, italic = true },
 		["htmlSpecialTagName"] = { fg = theme.red },
+		["htmlTitle"] = { fg = theme.white },
 
 		["javascript"] = { fg = theme.red },
 		["javascriptIdentifier"] = { fg = theme.magenta },
@@ -449,6 +451,9 @@ function M.load(theme)
 		["tsxAttrib"] = { fg = theme.blue, italic = true },
 		["tsxTagName"] = { fg = theme.yellow },
 		["tsxRegion"] = { fg = theme.green },
+
+		["jsonQuote"] = { fg = theme.none },
+		["jsonKeywordMatch"] = { fg = theme.red },
 
 		-- ts-rainbow
 		rainbowcol1 = { fg = theme.rainbowc1 },
