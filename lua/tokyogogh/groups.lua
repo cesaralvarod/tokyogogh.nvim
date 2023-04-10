@@ -43,7 +43,7 @@ function M.load(theme)
 		-- MoreMsg = {}, -- |more-prompt|
 		NonText = { fg = theme.black }, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
 		Normal = { bg = theme.bg, fg = theme.fg }, -- normal text
-		NormalFloat = { fg = theme.fg, bg = theme.bg }, -- normal text in floating windows.
+		NormalFloat = { fg = theme.fg, bg = theme.bg_popup }, -- normal text in floating windows.
 		FloatBorder = { fg = theme.border_highlight, bg = theme.bg_popup },
 		NormalNC = { bg = theme.bg, fg = theme.fg }, -- normal text in non-current windows
 		-- NormalSB = {}, -- normal text in sidebar
@@ -627,9 +627,11 @@ function M.load(theme)
 		ScrollbarHint = { fg = theme.hint, bg = theme.none },
 		ScrollbarMiscHandle = { fg = theme.purple, bg = theme.bg_highlight },
 		ScrollbarMisc = { fg = theme.purple, bg = theme.none },
+
 		-- Lazy
 		LazyProgressDone = { bold = true, fg = theme.magenta },
 		LazyProgressTodo = { bold = true, fg = theme.fg_gutter },
+
 		-- Notify
 		--- Border
 		NotifyERRORBorder = { fg = theme.error, bg = theme.bg_popup },
