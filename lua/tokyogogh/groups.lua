@@ -104,7 +104,7 @@ function M.load(theme)
 		Structure = { link = "Type", style = options.code_styles.structure }, -- struct, union, enum, etc.
 		Typedef = { link = "Type", style = options.code_styles.typedef }, -- A typedef
 
-		Special = { fg = theme.cyan, style = options.code_styles.special }, -- any special symbol (preffered group)
+		Special = { fg = theme.orange, style = options.code_styles.special }, -- any special symbol (preffered group)
 		SpecialChar = { fg = theme.cyan, style = options.code_styles.typedef }, -- special character in a constant
 		Tag = { fg = theme.red, style = options.code_styles.tag }, -- you can user CTRL-] on this
 		Delimiter = { fg = theme.white, style = options.code_styles.delimiter }, -- character that needs attention
@@ -233,7 +233,7 @@ function M.load(theme)
 		["@function"] = { link = "Function" },
 		["@function.css"] = { fg = theme.cyan, style = options.code_styles.functions },
 		--
-		["@function.builtin"] = { link = "Special" },
+		["@function.builtin"] = { fg = theme.cyan, style = options.code_styles.functions },
 		--
 		["@function.macro"] = { link = "Macro" },
 		--
@@ -363,38 +363,92 @@ function M.load(theme)
 
 		--LSP semantic tokens
 
-		["@lsp.type.class"] = { link = "@keyword" },
+		["@lsp.type.class"] = { link = "@type" },
+		-- ["@lsp.type.python"] = { link = "@type.python" },
 		["@lsp.type.comment"] = { link = "@comment" },
 		["@lsp.type.decorator"] = { link = "@keyword" },
 		["@lsp.type.enum"] = { link = "@keyword" },
 		["@lsp.type.enumMember"] = { link = "@variable" },
-		["@lsp.type.function"] = { link = "@keyword" },
-		["@lsp.type.interface"] = { link = "@keyword" },
+		["@lsp.type.function"] = { link = "@function" },
+		["@lsp.type.interface"] = { link = "@type" },
 		["@lsp.type.macro"] = { link = "@macro" },
 		["@lsp.type.method"] = { link = "@method" },
 		["@lsp.type.namespace"] = { link = "@namespace" },
+		["@lsp.type.namespace.c"] = { link = "@namespace.c" },
+		["@lsp.type.namespace.cpp"] = { link = "@namespace.cpp" },
 		["@lsp.type.parameter"] = { link = "@parameter" },
 		["@lsp.type.property"] = { link = "@property" },
+		["@lsp.type.property.lua"] = { link = "@field.lua" },
+		["@lsp.type.property.c"] = { link = "@field.c" },
+		["@lsp.type.property.cpp"] = { link = "@field.cpp" },
 		["@lsp.type.struct"] = { link = "@property" },
 		["@lsp.type.type"] = { link = "@type" },
 		["@lsp.type.typeParameter"] = { link = "@variable" },
 		["@lsp.type.variable"] = { link = "@variable" },
+		["@lsp.type.variable.c"] = { link = "@variable.c" },
+		["@lsp.type.variable.cpp"] = { link = "@variable.cpp" },
 		["@lsp.typemod.method.defaultLibrary"] = { link = "@function.builtin" },
 		["@lsp.typemod.function.defaultLibrary"] = { link = "@function.builtin" },
 		["@lsp.typemod.operator.injected"] = { link = "@operator" },
 		["@lsp.typemod.string.injected"] = { link = "@string" },
 		["@lsp.typemod.variable.defaultLibrary"] = { link = "@variable.builtin" },
+		["@lsp.typemod.variable.defaultLibrary.cpp"] = { fg = theme.white },
 		["@lsp.typemod.variable.injected"] = { link = "@variable" },
 		-- ["@lsp.typemod.variable.globalScope"] (global variables)
+		["@lsp.mod.deprecated"] = { strikethrough = true },
 
 		-- More highlight
 
-		-- ["htmlTag"] = { fg = theme.white },
-		-- ["htmlEndTag"] = { fg = theme.white },
-		-- ["htmlTagN"] = { fg = theme.red },
-		-- ["htmlTagName"] = { fg = theme.red },
-		-- ["htmlArg"] = { fg = theme.blue },
-		-- ["htmlSpecialTagName"] = { fg = theme.red },
+		["htmlTag"] = { fg = theme.white },
+		["htmlEndTag"] = { fg = theme.white },
+		["htmlTagN"] = { fg = theme.red },
+		["htmlTagName"] = { fg = theme.red },
+		["htmlArg"] = { fg = theme.blue, italic = true },
+		["htmlSpecialTagName"] = { fg = theme.red },
+
+		["javascript"] = { fg = theme.red },
+		["javascriptIdentifier"] = { fg = theme.magenta },
+		["javascriptValue"] = { fg = theme.orange },
+		["javascriptNumber"] = { fg = theme.orange },
+		["javascriptFunction"] = { fg = theme.magenta },
+		["javascriptParens"] = { fg = theme.rainbowc1 },
+		["javascriptBraces"] = { fg = theme.rainbowc1 },
+		["javascriptReserved"] = { fg = theme.magenta },
+		["javascriptStringS"] = { fg = theme.green },
+
+		["typescriptImport"] = { fg = theme.magenta },
+		["typescriptIdentifier"] = { fg = theme.yellow },
+		["typescriptIdentifierName"] = { fg = theme.yellow },
+		["typescriptTypeReference"] = { fg = theme.yellow },
+		["typescriptBlock"] = { fg = theme.red },
+		["typescriptBraces"] = { fg = theme.rainbowc1 },
+		["typescriptParens"] = { fg = theme.rainbowc1 },
+		["typescriptExport"] = { fg = theme.magenta },
+		["typescriptString"] = { fg = theme.green },
+		["typescriptVariable"] = { fg = theme.magenta },
+		["typescriptVariableDeclaration"] = { fg = theme.red },
+		["typescriptImportType"] = { fg = theme.magenta },
+		["typescriptAssign"] = { fg = theme.cyan },
+		["typescriptFuncTypeArrow"] = { fg = theme.cyan },
+		["typescriptFuncName"] = { fg = theme.blue },
+		["typescriptDecorator"] = { fg = theme.blue },
+		["typescriptObjectType"] = { fg = theme.cyan },
+		["typescriptMember"] = { fg = theme.blue },
+		["typescriptHeadersMethod"] = { fg = theme.blue },
+		["typescriptTypeBracket"] = { fg = theme.rainbowc3 },
+		["typescriptCall"] = { fg = theme.red, italic = true },
+		["typescriptInterfaceName"] = { fg = theme.yellow },
+		["typescriptCallHeritage"] = { fg = theme.yellow },
+		["typescriptClassBlock"] = { fg = theme.blue },
+		["typescriptClassName"] = { fg = theme.yellow },
+		["typescriptArrowFuncDef"] = { fg = theme.blue },
+		["typescriptArrayDestructure"] = { fg = theme.red },
+		["typescriptDestructureVariable"] = { fg = theme.red },
+
+		["tsxCloseString"] = { fg = theme.white },
+		["tsxAttrib"] = { fg = theme.blue, italic = true },
+		["tsxTagName"] = { fg = theme.yellow },
+		["tsxRegion"] = { fg = theme.green },
 
 		-- ts-rainbow
 		rainbowcol1 = { fg = theme.rainbowc1 },
