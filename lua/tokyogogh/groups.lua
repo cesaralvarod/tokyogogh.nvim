@@ -384,7 +384,7 @@ function M.load(theme)
 		["@lsp.type.property.cpp"] = { link = "@field.cpp" },
 		["@lsp.type.struct"] = { link = "@property" },
 		["@lsp.type.type"] = { link = "@type" },
-		["@lsp.type.typeParameter"] = { link = "@variable" },
+		["@lsp.type.typeParameter"] = { link = "@type" },
 		["@lsp.type.variable"] = { link = "@variable" },
 		["@lsp.type.variable.c"] = { link = "@variable.c" },
 		["@lsp.type.variable.cpp"] = { link = "@variable.cpp" },
@@ -467,10 +467,10 @@ function M.load(theme)
 		-- ts-rainbow2 (maintained fork)
 		TSRainbowRed = { fg = theme.red },
 		TSRainbowOrange = { fg = theme.orange },
-		TSRainbowYellow = { fg = theme.yellow },
+		TSRainbowYellow = { fg = theme.rainbowc1 },
 		TSRainbowGreen = { fg = theme.green },
-		TSRainbowBlue = { fg = theme.blue },
-		TSRainbowViolet = { fg = theme.purple },
+		TSRainbowBlue = { fg = theme.rainbowc3 },
+		TSRainbowViolet = { fg = theme.rainbowc2 },
 		TSRainbowCyan = { fg = theme.cyan },
 
 		-- diff
@@ -584,6 +584,7 @@ function M.load(theme)
 		CmpItemKindEnumMember = { fg = theme.green, bg = theme.none },
 		CmpItemKindOperator = { fg = theme.green, bg = theme.none },
 		CmpItemKindSnippet = { fg = theme.black, bg = theme.none },
+
 		-- navic
 		NavicIconsFile = { fg = theme.fg, bg = theme.none },
 		NavicIconsModule = { fg = theme.yellow, bg = theme.none },
@@ -614,11 +615,12 @@ function M.load(theme)
 		NavicIconsTypeParameter = { fg = theme.green, bg = theme.none },
 		NavicText = { fg = theme.fg, bg = theme.none },
 		NavicSeparator = { fg = theme.fg, bg = theme.none },
+
 		-- ident balnkline
 		IndentBlanklineChar = { fg = theme.fg_gutter, nocombine = true },
 		IndentBlanklineContextChar = { fg = theme.purple, nocombine = true },
-		-- scrollbar
 
+		-- scrollbar
 		ScrollbarHandle = { fg = theme.none, bg = theme.bg_highlight },
 		ScrollbarSearchHandle = { fg = theme.orange, bg = theme.bg_highlight },
 		ScrollbarSearch = { fg = theme.orange, bg = theme.none },
