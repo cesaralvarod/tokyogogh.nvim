@@ -149,9 +149,11 @@ function M.load(theme)
 		-- Tressitter
 
 		-- text
+		["@text.html"] = { fg = theme.white },
 		["@text.literal"] = { fg = theme.green },
 		["@text.reference"] = { fg = theme.blue },
 		["@text.title"] = { fg = theme.red, bold = true },
+		["@text.title.html"] = { fg = theme.white },
 		["@text.uri"] = { fg = theme.green, underline = true },
 		["@text.underline"] = { fg = theme.green, underline = true },
 		["@text.todo"] = { link = "Todo" },
@@ -177,25 +179,29 @@ function M.load(theme)
 		["@comment.documentation.go"] = { link = "Comment" },
 		--
 		["@punctuation"] = { link = "Delimiter" },
-		-- ["@punctuation.dockerfile"] = { fg = theme.red },
+		--
 		["@punctuation.delimiter"] = { link = "@punctuation" },
 		["@punctuation.delimiter.css"] = { fg = theme.cyan, style = options.code_styles.delimiter },
-		-- ["@punctuation.delimiter.markdown"] = { fg = theme.orange, bold = true },
+		["@punctuation.delimiter.markdown"] = { fg = theme.orange, bold = true },
+		--
 		["@punctuation.bracket"] = { fg = theme.rainbowc1, style = options.code_styles.delimiter },
-		-- ["@punctuation.bracket.lua"] = { fg = theme.white },
+		--
 		["@punctuation.special"] = { fg = theme.cyan, style = options.code_styles.delimiter },
+		["@punctuation.special.markdown"] = { fg = theme.red, style = options.code_styles.delimiter },
 		["@punctuation.special.vue"] = { fg = theme.rainbowc1, style = options.code_styles.delimiter },
 		["@punctuation.special.bash"] = { fg = theme.red, style = options.code_styles.delimiter },
 		-- [" "#e08f68@punctuation.special.markdown"] = { fg = theme.red },
 
 		-- constants
 		["@constant"] = { fg = theme.yellow, style = options.code_styles.constant },
+		["@constant.python"] = { fg = theme.orange, style = options.code_styles.constant },
 		["@constant.bash"] = { fg = theme.red, style = options.code_styles.constant },
-		-- ["@constant.lua"] = { fg = theme.red },
-		-- ["@constant.html"] = { fg = theme.red },
-		-- ["@constant.gitignore"] = { fg = theme.white },
+		["@constant.lua"] = { fg = theme.red, style = options.code_styles.constant },
+		["@constant.html"] = { fg = theme.red, style = options.code_styles.constant },
+		["@constant.gitignore"] = { fg = theme.white, style = options.code_styles.constant },
 		--
 		["@constant.builtin"] = { link = "Special" },
+		["@constant.builtin.python"] = { fg = theme.red, style = options.code_styles.special },
 		--
 		["@constant.macro"] = { link = "Define" },
 		--
@@ -204,7 +210,8 @@ function M.load(theme)
 		["@macro"] = { link = "Macro" },
 		--
 		["@string"] = { link = "String" },
-		-- ["@string.regex"] = { link = "String" },
+		--
+		["@string.regex"] = { link = "String" },
 		--
 		["@string.escape"] = { link = "SpecialChar" },
 		--
@@ -216,7 +223,7 @@ function M.load(theme)
 		["@character.special"] = { link = "SpecialChar" },
 		--
 		["@number"] = { link = "Number" },
-		-- ["@number.dockerfile"] = { fg = theme.red },
+		["@number.dockerfile"] = { fg = theme.red, style = options.code_styles.number },
 		--
 		["@boolean"] = { link = "Boolean" },
 		--
@@ -230,23 +237,21 @@ function M.load(theme)
 		--
 		["@function.macro"] = { link = "Macro" },
 		--
-		["@function.call"] = { fg = theme.cyan, style = options.code_styles.functions },
-		-- ["@function.call.dockerfile"] = { fg = theme.red },
-		-- ["@function.call.go"] = { fg = theme.cyan },
+		["@function.call"] = { fg = theme.blue, style = options.code_styles.functions },
 		["@function.call.bash"] = { fg = theme.white, style = options.code_styles.functions },
-		["@function.call.python"] = { fg = theme.cyan, italic = false },
 		["@function.call.c"] = { fg = theme.blue, italic = false },
 		["@function.call.cpp"] = { fg = theme.blue, italic = false },
 		--
 		["@parameter"] = { fg = theme.red, italic = true },
 		["@parameter.lua"] = { fg = theme.white, italic = true },
 		["@parameter.python"] = { fg = theme.orange, italic = true },
-		-- ["@parameter.builtin"] = { fg = theme.white },
+		["@parameter.bash"] = { fg = theme.red, italic = false },
+		--
+		["@parameter.builtin"] = { fg = theme.white },
 		--
 		["@method"] = { link = "Function" },
 		--
 		["@method.call"] = { link = "Function" },
-		-- ["@method.call.go"] = { fg = theme.cyan },
 		--
 		["@field"] = { link = "Identifier" },
 		["@field.lua"] = { fg = theme.white, style = options.code_styles.identifier },
@@ -254,8 +259,7 @@ function M.load(theme)
 		["@field.python"] = { fg = theme.white, style = options.code_styles.identifier },
 		["@field.go"] = { fg = theme.white, style = options.code_styles.identifier },
 		--
-		["@property"] = { link = "Identifier" },
-		-- ["@property.lua"] = { fg = theme.white },
+		["@property"] = { fg = theme.cyan, style = options.code_styles.identifier },
 		["@property.css"] = { fg = theme.white, style = options.code_styles.identifier },
 		["@property.scss"] = { fg = theme.white, style = options.code_styles.identifier },
 		--
@@ -284,14 +288,17 @@ function M.load(theme)
 		["@operator.python"] = { fg = theme.cyan, style = options.code_styles.operator },
 		--
 		["@keyword"] = { link = "Keyword" },
-		["@keyword.dockerfile"] = { fg = theme.blue, style = options.code_styles.keyword },
+		["@keyword.python"] = { fg = theme.magenta, italic = true },
 		--
 		-- ["@keyword.coroutine"] = { }, -- For keywords related to coroutines.
+		--
 		["@keyword.function"] = { link = "Keyword" },
+		--
 		["@keyword.operator"] = { fg = theme.magenta, style = options.code_styles.keyword },
 		["@keyword.operator.php"] = { fg = theme.magenta, style = options.code_styles.keyword },
 		--
 		["@exception"] = { link = "Exception" },
+		["@exception.python"] = { fg = theme.magenta, italic = true },
 		--
 		["@variable"] = { link = "Identifier" },
 		["@variable.astro"] = { fg = theme.magenta, style = options.code_styles.identifier },
@@ -301,7 +308,8 @@ function M.load(theme)
 		["@variable.go"] = { fg = theme.white, style = options.code_styles.identifier },
 		--
 		["@variable.builtin"] = { fg = theme.yellow, style = options.code_styles.identifier },
-		-- --
+		["@variable.builtin.lua"] = { fg = theme.cyan, style = options.code_styles.identifier },
+		--
 		["@type"] = { link = "Type" },
 		["@type.python"] = { fg = theme.cyan, style = options.code_styles.type },
 		["@type.css"] = { fg = theme.red, style = options.code_styles.type },
@@ -331,7 +339,7 @@ function M.load(theme)
 		["@namespace.php"] = { fg = theme.yellow, style = options.code_styles.identifier },
 		--
 		["@include"] = { link = "Include" },
-		-- ["@include.python"] = { fg = theme.magenta, italic = true },
+		["@include.python"] = { fg = theme.magenta, italic = true },
 		--
 		["@preproc"] = { link = "PreProc" },
 		["@preproc.lua"] = { fg = theme.comment, italic = true },
@@ -342,11 +350,12 @@ function M.load(theme)
 		["@attribute"] = { fg = theme.magenta, style = options.code_styles.keyword },
 		--
 		["@tag"] = { link = "Tag" },
-		-- ["@tag.tsx"] = { fg = theme.red },
-		-- ["@tag.html"] = { fg = theme.red },
+		--
 		-- ["@tag.builtin.tsx"] = { fg = theme.yellow },
+		--
 		["@tag.attribute"] = { fg = theme.blue, italic = true },
 		-- ["@tag.attribute.html"] = { fg = theme.blue, italic = false },
+		--
 		["@tag.delimiter"] = { fg = theme.white },
 		--
 		["@identifier"] = { link = "Identifier" },

@@ -39,7 +39,7 @@ local M = {
 
 	-- Colors
 	black = "#414868",
-	red = "#e87088",
+	red = "#f7768e",
 	green = "#9ece6a",
 	yellow = "#dec76e",
 	blue = "#7aa2f7",
