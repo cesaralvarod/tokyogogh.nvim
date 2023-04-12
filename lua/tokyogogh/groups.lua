@@ -160,7 +160,7 @@ function M.load(theme)
 		["@text.strong"] = { fg = theme.orange, bold = true },
 		["@text.emphasis"] = { fg = theme.magenta, italic = true },
 		["@text.strike"] = { strikethrough = true },
-		["@text.quote"] = { fg = theme.comment },
+		["@text.quote"] = { fg = theme.yellow, italic = true },
 		["@text.todo.unchecked"] = {},
 		["@text.todo.checked"] = {},
 		["@text.warning"] = {},
