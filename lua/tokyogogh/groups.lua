@@ -364,7 +364,9 @@ function M.load(theme)
 
 		--LSP semantic tokens
 
+		-- Types: namespace, class, type, enum, enumMember, interface, struct, typeParameter, parameter, variable, property, event, function, method, macro, keyword, modifier, comment, string, number, regexp, operator, decorator
 		["@lsp.type.class"] = { link = "@type" },
+		-- ["@lsp.type.event"] = {}, -- not used
 		-- ["@lsp.type.python"] = { link = "@type.python" },
 		["@lsp.type.comment"] = { link = "@comment" },
 		["@lsp.type.decorator"] = { link = "@keyword" },
@@ -374,7 +376,8 @@ function M.load(theme)
 		["@lsp.type.interface"] = { link = "@type" },
 		["@lsp.type.macro"] = { link = "@macro" },
 		["@lsp.type.method"] = { link = "@method" },
-		["@lsp.type.namespace"] = { link = "@namespace" },
+		-- ["@lsp.type.modifier"] = {}, -- not used
+		["@lsp.type.namespace"] = { fg = theme.yellow },
 		["@lsp.type.namespace.c"] = { link = "@namespace.c" },
 		["@lsp.type.namespace.cpp"] = { link = "@namespace.cpp" },
 		["@lsp.type.parameter"] = { link = "@parameter" },
@@ -388,6 +391,7 @@ function M.load(theme)
 		["@lsp.type.variable"] = { link = "@variable" },
 		["@lsp.type.variable.c"] = { link = "@variable.c" },
 		["@lsp.type.variable.cpp"] = { link = "@variable.cpp" },
+		-- Typemods: declaration, definition, readonly, static, deprected, abstract, async, modifiction, documentation, defaultLibrary
 		["@lsp.typemod.method.defaultLibrary"] = { link = "@function.builtin" },
 		["@lsp.typemod.function.defaultLibrary"] = { link = "@function.builtin" },
 		["@lsp.typemod.operator.injected"] = { link = "@operator" },
