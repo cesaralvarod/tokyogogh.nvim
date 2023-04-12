@@ -174,8 +174,11 @@ function M.load(theme)
 
 		-- miscs
 		["@comment"] = { link = "Comment" },
+		--
 		["@comment.documentation"] = { link = "String", style = options.code_styles.comment },
 		["@comment.documentation.javascript"] = { link = "Comment" },
+		["@comment.documentation.typescript"] = { link = "Comment" },
+		["@comment.documentation.tsx"] = { link = "Comment" },
 		["@comment.documentation.lua"] = { link = "Comment" },
 		["@comment.documentation.go"] = { link = "Comment" },
 		--
