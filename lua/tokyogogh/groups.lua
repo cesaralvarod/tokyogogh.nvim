@@ -329,11 +329,7 @@ function M.load(theme)
 		["@type.builtin.go"] = { fg = theme.magenta, style = options.code_styles.type },
 		["@type.builtin.java"] = { fg = theme.magenta, style = options.code_styles.type },
 		--
-		["@type.qualifier"] = { link = "Type" },
-		["@type.qualifier.cpp"] = { fg = theme.magenta, style = options.code_styles.type },
-		["@type.qualifier.c"] = { fg = theme.magenta, style = options.code_styles.type },
-		["@type.qualifier.php"] = { fg = theme.magenta, style = options.code_styles.type },
-		["@type.qualifier.java"] = { fg = theme.magenta, style = options.code_styles.type },
+		["@type.qualifier"] = { fg = theme.magenta, style = options.code_styles.type },
 		--
 		["@storageclass"] = { link = "StorageClass" },
 		--
