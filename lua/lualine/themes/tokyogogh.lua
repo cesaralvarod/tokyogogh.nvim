@@ -21,7 +21,7 @@ tokyogogh.command = {
 
 tokyogogh.visual = {
 	a = { bg = colors.magenta, fg = colors.bg_statusline },
-	b = { bg = colors.fg_gutter, fg = colors.yellow },
+	b = { bg = colors.fg_gutter, fg = colors.magenta },
 }
 
 tokyogogh.replace = {
