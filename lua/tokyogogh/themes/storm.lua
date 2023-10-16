@@ -67,10 +67,13 @@ local M = {
 
 	-- Diff
 	diff = {
-		add = "#9ece6a",
+		add = "#59db10",
 		change = "#394b70",
 		delete = "#f7768e",
 		text = "#c53b53",
+		add_bg = utils.darken("#BCEEC7", 0.4),
+		change_bg = "#394b70",
+		delete_bg = utils.darken("#FBA1B2", 0.4),
 	},
 
 	-- GitSigns

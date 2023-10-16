@@ -1,5 +1,9 @@
 # Change Log
 
+## [2023-10-16]
+
+- Add Neogit support.
+
 ## [2023-04-09]
 
 - Order groups

@@ -16,9 +16,9 @@ function M.load(theme)
 		CursorColumn = { bg = theme.bg_highlight }, -- screen-column at the cursor, when 'cursorcolumn' is set
 		CursorLine = { bg = theme.bg_highlight }, -- screen-line at the cursor, when 'cursorline' is set. Low-priority if foreground (ctermfg OR guifg) is not set
 		Directory = { fg = theme.blue }, -- directory names (and other special names in listings)
-		DiffAdd = { bg = theme.diff.add }, -- diff mode: Added line
-		DiffChange = { bg = theme.diff.change }, -- diff mode: Changed line
-		DiffDelete = { bg = theme.diff.remove }, -- diff mode: Deleted line
+		DiffAdd = { bg = theme.diff.add_bg }, -- diff mode: Added line
+		DiffChange = { bg = theme.diff.change_bg }, -- diff mode: Changed line
+		DiffDelete = { bg = theme.diff.delete_bg }, -- diff mode: Deleted line
 		DiffText = { bg = theme.diff.text }, -- diff mode: Changed text within a changed line |diff.txt|
 		EndOfBuffer = { fg = theme.bg }, -- filler lines (~) after the end of the buffer.  By default, this is highlighted like |hl-NonText|.
 		-- TermCursor = {}, -- cursor in a focused terminal
@@ -782,15 +782,15 @@ function M.load(theme)
 		-- Neogit
 		NeogitBranch = { fg = theme.magenta },
 		NeogitRemote = { fg = theme.purple },
-		NeogitHunkHeader = { bg = theme.fg_gutter, fg = theme.blue },
+		NeogitHunkHeader = { bg = theme.fg_gutter, fg = theme.fg },
 		NeogitHunkHeaderHighlight = { bg = theme.fg_gutter, fg = theme.fg },
-		NeogitDiffAdd = { fg = theme.green, bg = theme.bg },
-		NeogitDiffAddRegion = { fg = theme.green, bg = theme.bg },
-		NeogitDiffDelete = { fg = theme.red, bg = theme.bg },
+		NeogitDiffAdd = { fg = theme.git.add, bg = theme.bg },
+		NeogitDiffAddRegion = { fg = theme.git.add, bg = theme.bg },
+		NeogitDiffDelete = { fg = theme.git.remove, bg = theme.bg },
 		NeogitDiffDeleteRegion = { fg = theme.fg, bg = theme.bg },
 		NeogitDiffContextHighlight = { fg = theme.fg, bg = theme.bg },
-		NeogitDiffDeleteHighlight = { fg = theme.error, bg = theme.bg_highlight },
-		NeogitDiffAddHighlight = { fg = theme.green, bg = theme.bg_highlight },
+		NeogitDiffDeleteHighlight = { fg = theme.git.remove, bg = theme.bg_highlight },
+		NeogitDiffAddHighlight = { fg = theme.git.add, bg = theme.bg_highlight },
 	}
 
 	utils.highlight(groups)
