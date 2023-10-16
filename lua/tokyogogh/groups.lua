@@ -778,6 +778,19 @@ function M.load(theme)
 		NotifyINFOBody = { fg = theme.fg, bg = theme.bg_popup },
 		NotifyDEBUGBody = { fg = theme.fg, bg = theme.bg_popup },
 		NotifyTRACEBody = { fg = theme.fg, bg = theme.bg_popup },
+
+		-- Neogit
+		NeogitBranch = { fg = theme.magenta },
+		NeogitRemote = { fg = theme.purple },
+		NeogitHunkHeader = { bg = theme.fg_gutter, fg = theme.blue },
+		NeogitHunkHeaderHighlight = { bg = theme.fg_gutter, fg = theme.fg },
+		NeogitDiffAdd = { fg = theme.green, bg = theme.bg },
+		NeogitDiffAddRegion = { fg = theme.green, bg = theme.bg },
+		NeogitDiffDelete = { fg = theme.red, bg = theme.bg },
+		NeogitDiffDeleteRegion = { fg = theme.fg, bg = theme.bg },
+		NeogitDiffContextHighlight = { fg = theme.fg, bg = theme.bg },
+		NeogitDiffDeleteHighlight = { fg = theme.error, bg = theme.bg_highlight },
+		NeogitDiffAddHighlight = { fg = theme.green, bg = theme.bg_highlight },
 	}
 
 	utils.highlight(groups)
