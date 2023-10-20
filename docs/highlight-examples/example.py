@@ -4,6 +4,7 @@
 import numpy as np
 from sklearn.linear_model import LinearRegression
 
+
 # Defining a function
 
 
@@ -14,7 +15,8 @@ def factorial(n: int) -> int:
     if n == 0:
         return 1
     else:
-        return n * factorial(n-1)
+        return n * factorial(n - 1)
+
 
 # Creating a class
 
@@ -58,7 +60,8 @@ for i in range(5):
 # Defining a lambda function
 
 
-def double(x): return x * 2
+def double(x):
+    return x * 2
 
 
 print(double(5))

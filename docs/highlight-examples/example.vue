@@ -6,10 +6,10 @@
 </template>
 
 <script>
-import { computed } from 'vue'
+import { computed } from "vue";
 
 export default {
-  name: 'Page',
+  name: "Page",
   props: {
     title: {
       type: String,
@@ -21,15 +21,15 @@ export default {
     },
   },
   setup(props) {
-    const pageTitle = computed(() => props.title.toUpperCase())
-    const pageContent = computed(() => props.content)
+    const pageTitle = computed(() => props.title.toUpperCase());
+    const pageContent = computed(() => props.content);
 
     return {
       pageTitle,
       pageContent,
-    }
+    };
   },
-}
+};
 </script>
 
 <style>

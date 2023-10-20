@@ -41,10 +41,10 @@ Triple backticks (\`\`\`) followed by the name of the programming language can b
 ```javascript
 // This is a code block in JavaScript
 function greet(name) {
-  console.log(`Hello, ${name}!`)
+  console.log(`Hello, ${name}!`);
 }
 
-greet('John')
+greet("John");
 ```
 
 ## Headers

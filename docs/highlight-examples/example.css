@@ -46,7 +46,7 @@ li {
 }
 
 button,
-input[type='submit'] {
+input[type="submit"] {
   border: 1px solid #ccc;
   padding: 0.5em 1em;
   border-radius: 3px;
@@ -54,9 +54,9 @@ input[type='submit'] {
   cursor: pointer;
 }
 
-input[type='text'],
-input[type='email'],
-input[type='password'] {
+input[type="text"],
+input[type="email"],
+input[type="password"] {
   border: 1px solid #ccc;
   padding: 0.5em;
   border-radius: 3px;
