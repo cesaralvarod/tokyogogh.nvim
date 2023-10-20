@@ -205,7 +205,7 @@ function M.load(theme)
 		["@constant.gitignore"] = { fg = theme.white, style = options.code_styles.constant },
 		--
 		["@constant.builtin"] = { link = "Special" },
-		["@constant.builtin.python"] = { fg = theme.red, style = options.code_styles.special },
+		["@constant.builtin.python"] = { fg = theme.orange, style = options.code_styles.special },
 		--
 		["@constant.macro"] = { link = "Define" },
 		--
@@ -248,7 +248,7 @@ function M.load(theme)
 		--
 		["@parameter"] = { fg = theme.red, italic = true },
 		["@parameter.lua"] = { fg = theme.white, italic = true },
-		["@parameter.python"] = { fg = theme.orange, italic = true },
+		["@parameter.python"] = { fg = theme.red, italic = true },
 		["@parameter.bash"] = { fg = theme.red, italic = false },
 		--
 		["@parameter.builtin"] = { fg = theme.white },
@@ -274,6 +274,7 @@ function M.load(theme)
 		["@constructor.typescript"] = { fg = theme.yellow, style = options.code_styles.special },
 		["@constructor.javascript"] = { fg = theme.yellow, style = options.code_styles.special },
 		["@constructor.lua"] = { fg = theme.magenta, style = options.code_styles.special }, -- {} brackets
+		["@constructor.python"] = { fg = theme.blue, style = options.code_styles.special },
 
 		-- keywords
 		["@conditional"] = { link = "Conditional" },
