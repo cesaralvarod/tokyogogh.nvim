@@ -194,12 +194,15 @@ function M.load(theme)
 		["@punctuation.special.markdown"] = { fg = theme.red, style = options.code_styles.delimiter },
 		["@punctuation.special.vue"] = { fg = theme.rainbowc1, style = options.code_styles.delimiter },
 		["@punctuation.special.bash"] = { fg = theme.red, italic = true },
+		["@punctuation.special.typescript"] = { fg = theme.magenta },
+		["@punctuation.special.javascript"] = { fg = theme.magenta },
 		-- [" "#e08f68@punctuation.special.markdown"] = { fg = theme.red },
 
 		-- constants
 		["@constant"] = { fg = theme.yellow, style = options.code_styles.constant },
 		["@constant.python"] = { fg = theme.orange, style = options.code_styles.constant },
 		["@constant.bash"] = { fg = theme.red, style = options.code_styles.constant },
+		["@constant.php"] = { fg = theme.red, style = options.code_styles.constant },
 		["@constant.lua"] = { fg = theme.red, style = options.code_styles.constant },
 		["@constant.html"] = { fg = theme.red, style = options.code_styles.constant },
 		["@constant.gitignore"] = { fg = theme.white, style = options.code_styles.constant },
@@ -245,6 +248,7 @@ function M.load(theme)
 		["@function.call.bash"] = { fg = theme.blue, style = options.code_styles.functions },
 		["@function.call.c"] = { fg = theme.blue, italic = false },
 		["@function.call.cpp"] = { fg = theme.blue, italic = false },
+		["@function.call.php"] = { fg = theme.cyan, italic = false },
 		--
 		["@parameter"] = { fg = theme.red, italic = true },
 		["@parameter.lua"] = { fg = theme.white, italic = true },
@@ -256,6 +260,7 @@ function M.load(theme)
 		["@method"] = { link = "Function" },
 		--
 		["@method.call"] = { link = "Function" },
+		["@method.call.go"] = { fg = theme.cyan },
 		--
 		["@field"] = { link = "Identifier" },
 		["@field.lua"] = { fg = theme.white, style = options.code_styles.identifier },
@@ -271,8 +276,8 @@ function M.load(theme)
 		--
 		["@constructor"] = { link = "Special" },
 		["@constructor.tsx"] = { fg = theme.yellow, style = options.code_styles.special },
-		["@constructor.typescript"] = { fg = theme.yellow, style = options.code_styles.special },
-		["@constructor.javascript"] = { fg = theme.yellow, style = options.code_styles.special },
+		["@constructor.typescript"] = { fg = theme.magenta, style = options.code_styles.special },
+		["@constructor.javascript"] = { fg = theme.magenta, style = options.code_styles.special },
 		["@constructor.lua"] = { fg = theme.magenta, style = options.code_styles.special }, -- {} brackets
 		["@constructor.python"] = { fg = theme.blue, style = options.code_styles.special },
 
@@ -295,6 +300,7 @@ function M.load(theme)
 		--
 		["@keyword"] = { link = "Keyword" },
 		["@keyword.python"] = { fg = theme.magenta, italic = true },
+		["@keyword.php"] = { fg = theme.cyan, italic = false },
 		--
 		-- ["@keyword.coroutine"] = { }, -- For keywords related to coroutines.
 		--
@@ -311,7 +317,7 @@ function M.load(theme)
 		["@variable.cpp"] = { fg = theme.white, style = options.code_styles.identifier },
 		["@variable.c"] = { fg = theme.white, style = options.code_styles.identifier },
 		["@variable.python"] = { fg = theme.white, style = options.code_styles.identifier },
-		["@variable.go"] = { fg = theme.white, style = options.code_styles.identifier },
+		["@variable.go"] = { fg = theme.red, style = options.code_styles.identifier },
 		["@variable.bash"] = { fg = theme.red, italic = true },
 		--
 		["@variable.builtin"] = { fg = theme.yellow, style = options.code_styles.identifier },
@@ -322,6 +328,7 @@ function M.load(theme)
 		["@type.css"] = { fg = theme.red, style = options.code_styles.type },
 		["@type.scss"] = { fg = theme.red, style = options.code_styles.type },
 		["@type.sql"] = { fg = theme.blue, style = options.code_styles.type },
+		["@type.go"] = { fg = theme.white, style = options.code_styles.type },
 		--
 		["@type.definition"] = { link = "Typedef" },
 		--
@@ -340,6 +347,7 @@ function M.load(theme)
 		["@namespace.cpp"] = { fg = theme.yellow, style = options.code_styles.identifier },
 		["@namespace.c"] = { fg = theme.yellow, style = options.code_styles.identifier },
 		["@namespace.php"] = { fg = theme.yellow, style = options.code_styles.identifier },
+		["@namespace.go"] = { fg = theme.yellow, style = options.code_styles.identifier },
 		--
 		["@include"] = { link = "Include" },
 		["@include.python"] = { fg = theme.magenta, italic = true },
@@ -351,6 +359,8 @@ function M.load(theme)
 		["@debug"] = { link = "Debug" },
 		--
 		["@attribute"] = { fg = theme.magenta, style = options.code_styles.keyword },
+		["@attribute.javascript"] = { fg = theme.blue, style = options.code_styles.keyword },
+		["@attribute.typescript"] = { fg = theme.blue, style = options.code_styles.keyword },
 		--
 		["@tag"] = { link = "Tag" },
 		--
