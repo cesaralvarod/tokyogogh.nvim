@@ -193,7 +193,7 @@ function M.load(theme)
 		["@punctuation.special"] = { fg = theme.cyan, style = options.code_styles.delimiter },
 		["@punctuation.special.markdown"] = { fg = theme.red, style = options.code_styles.delimiter },
 		["@punctuation.special.vue"] = { fg = theme.rainbowc1, style = options.code_styles.delimiter },
-		["@punctuation.special.bash"] = { fg = theme.red, style = options.code_styles.delimiter },
+		["@punctuation.special.bash"] = { fg = theme.red, italic = true },
 		-- [" "#e08f68@punctuation.special.markdown"] = { fg = theme.red },
 
 		-- constants
@@ -242,14 +242,14 @@ function M.load(theme)
 		["@function.macro"] = { link = "Macro" },
 		--
 		["@function.call"] = { fg = theme.blue, style = options.code_styles.functions },
-		["@function.call.bash"] = { fg = theme.white, style = options.code_styles.functions },
+		["@function.call.bash"] = { fg = theme.blue, style = options.code_styles.functions },
 		["@function.call.c"] = { fg = theme.blue, italic = false },
 		["@function.call.cpp"] = { fg = theme.blue, italic = false },
 		--
 		["@parameter"] = { fg = theme.red, italic = true },
 		["@parameter.lua"] = { fg = theme.white, italic = true },
 		["@parameter.python"] = { fg = theme.red, italic = true },
-		["@parameter.bash"] = { fg = theme.red, italic = false },
+		["@parameter.bash"] = { fg = theme.orange, italic = false },
 		--
 		["@parameter.builtin"] = { fg = theme.white },
 		--
@@ -291,6 +291,7 @@ function M.load(theme)
 		["@operator.c"] = { fg = theme.magenta, style = options.code_styles.operator },
 		["@operator.lua"] = { fg = theme.white, style = options.code_styles.operator },
 		["@operator.python"] = { fg = theme.cyan, style = options.code_styles.operator },
+		["@operator.bash"] = { fg = theme.cyan, style = options.code_styles.operator },
 		--
 		["@keyword"] = { link = "Keyword" },
 		["@keyword.python"] = { fg = theme.magenta, italic = true },
@@ -311,6 +312,7 @@ function M.load(theme)
 		["@variable.c"] = { fg = theme.white, style = options.code_styles.identifier },
 		["@variable.python"] = { fg = theme.white, style = options.code_styles.identifier },
 		["@variable.go"] = { fg = theme.white, style = options.code_styles.identifier },
+		["@variable.bash"] = { fg = theme.red, italic = true },
 		--
 		["@variable.builtin"] = { fg = theme.yellow, style = options.code_styles.identifier },
 		["@variable.builtin.lua"] = { fg = theme.cyan, style = options.code_styles.identifier },
