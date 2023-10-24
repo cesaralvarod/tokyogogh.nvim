@@ -200,7 +200,7 @@ function M.load(theme)
 
 		-- constants
 		["@constant"] = { fg = theme.yellow, style = options.code_styles.constant },
-		["@constant.python"] = { fg = theme.orange, style = options.code_styles.constant },
+		["@constant.python"] = { fg = theme.yellow, style = options.code_styles.constant },
 		["@constant.bash"] = { fg = theme.red, style = options.code_styles.constant },
 		["@constant.php"] = { fg = theme.red, style = options.code_styles.constant },
 		["@constant.lua"] = { fg = theme.red, style = options.code_styles.constant },
@@ -265,7 +265,7 @@ function M.load(theme)
 		["@field"] = { link = "Identifier" },
 		["@field.lua"] = { fg = theme.white, style = options.code_styles.identifier },
 		["@field.cpp"] = { fg = theme.white, style = options.code_styles.identifier },
-		["@field.python"] = { fg = theme.white, style = options.code_styles.identifier },
+		["@field.python"] = { fg = theme.yellow, style = options.code_styles.identifier },
 		["@field.go"] = { fg = theme.white, style = options.code_styles.identifier },
 		--
 		["@property"] = { fg = theme.cyan, style = options.code_styles.identifier },
